@@ -1,0 +1,213 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpeqkcqymvysk"]
+
+[ext_resource type="Script" path="res://脚本/ui界面.gd" id="1_vis5o"]
+[ext_resource type="Texture2D" uid="uid://3tn4nw8nmt3m" path="res://图片/黑神话UI抠图.png" id="2_3a3fr"]
+[ext_resource type="PackedScene" uid="uid://bi50d0a0gnphv" path="res://场景/血条.tscn" id="3_o6ww5"]
+[ext_resource type="PackedScene" uid="uid://dt8n4y63mj57y" path="res://场景/蓝条.tscn" id="4_q83v2"]
+[ext_resource type="PackedScene" uid="uid://c1k7eir1mvmta" path="res://场景/体力条.tscn" id="5_5x5k5"]
+
+[node name="UI界面" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vis5o")
+
+[node name="血量操作滑块" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.679
+anchor_top = 0.052
+anchor_right = 0.92
+anchor_bottom = 0.103
+offset_left = -0.208008
+offset_top = 0.304001
+offset_right = 0.160034
+offset_bottom = 0.255997
+
+[node name="数值显示" type="Label" parent="血量操作滑块"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.457
+anchor_top = -0.697
+anchor_right = 0.601
+offset_left = -0.0460052
+offset_top = 0.00100136
+offset_right = -0.0780029
+text = "123"
+
+[node name="扣血按钮" type="Button" parent="血量操作滑块"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.158
+anchor_right = -0.014
+anchor_bottom = 0.939
+offset_left = -0.0759964
+offset_right = -0.108
+offset_bottom = 0.0129986
+text = "扣血"
+
+[node name="加血按钮" type="Button" parent="血量操作滑块"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.144
+anchor_bottom = 0.939
+offset_right = -0.0320129
+offset_bottom = 0.0129986
+text = "加血"
+
+[node name="蓝量操作滑块" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.679
+anchor_top = 0.136
+anchor_right = 0.92
+anchor_bottom = 0.184
+offset_left = -0.208008
+offset_top = -0.128006
+offset_right = 0.160034
+offset_bottom = 1.76799
+
+[node name="数值显示" type="Label" parent="蓝量操作滑块"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.457
+anchor_top = -0.697
+anchor_right = 0.601
+offset_left = -0.0460052
+offset_top = 0.00100136
+offset_right = -0.0780029
+text = "123"
+
+[node name="扣按钮" type="Button" parent="蓝量操作滑块"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.158
+anchor_right = -0.014
+anchor_bottom = 0.939
+offset_left = -0.0759964
+offset_right = -0.108
+offset_bottom = 0.0129986
+text = "扣蓝"
+
+[node name="加按钮" type="Button" parent="蓝量操作滑块"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.144
+anchor_bottom = 0.939
+offset_right = -0.0320129
+offset_bottom = 0.0129986
+text = "加蓝"
+
+[node name="体力条操作滑块" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.679
+anchor_top = 0.211
+anchor_right = 0.92
+anchor_bottom = 0.262
+offset_left = -0.208008
+offset_top = 0.271988
+offset_right = 0.160034
+offset_bottom = 0.223984
+
+[node name="数值显示" type="Label" parent="体力条操作滑块"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.457
+anchor_top = -0.697
+anchor_right = 0.601
+offset_left = -0.0460052
+offset_top = 0.00100136
+offset_right = -0.0780029
+text = "123"
+
+[node name="扣按钮" type="Button" parent="体力条操作滑块"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.158
+anchor_right = -0.014
+anchor_bottom = 0.939
+offset_left = -0.0759964
+offset_right = -0.108
+offset_bottom = 0.0129986
+text = "扣体力"
+
+[node name="加按钮" type="Button" parent="体力条操作滑块"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.144
+anchor_bottom = 0.939
+offset_right = -0.0320129
+offset_bottom = 0.0129986
+text = "加体力"
+
+[node name="状态UI" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 500.0
+offset_right = 451.0
+offset_bottom = 645.0
+texture = ExtResource("2_3a3fr")
+
+[node name="血条" parent="状态UI" instance=ExtResource("3_o6ww5")]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 55.0
+offset_right = 444.0
+offset_bottom = 79.0
+"减值动画颜色1" = Color(0.67451, 0.34902, 0.321569, 1)
+"减值动画颜色2" = Color(0.317647, 0.160784, 0.14902, 1)
+"减值动画速度" = 0.5
+"减值变色停留时间" = 0.5
+"是否加值变色" = false
+"加值动画颜色1" = Color(0.291687, 0.691406, 0.556764, 1)
+"加值动画颜色2" = Color(0.291687, 0.691406, 0.556764, 1)
+
+[node name="蓝条" parent="状态UI" instance=ExtResource("4_q83v2")]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 84.0
+offset_right = 459.0
+offset_bottom = 96.0
+"是否减值变色" = false
+"减值动画颜色1" = Color(0.44, 0.692, 1, 1)
+"减值动画速度" = 0.3
+"减值停留时间" = 0.5
+"减值变色停留时间" = 0.0
+"是否加值变色" = false
+"加值动画颜色1" = Color(0.757507, 0.909934, 0.984375, 1)
+"加值停留时间" = 0.5
+"前景条颜色" = Color(0.223529, 0.384314, 0.580392, 1)
+
+[node name="体力条" parent="状态UI" instance=ExtResource("5_5x5k5")]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 103.0
+offset_right = 459.0
+offset_bottom = 115.0
+"减值动画颜色1" = Color(1, 0.820747, 0.539063, 1)
+"减值动画颜色2" = Color(0.449219, 0.36733, 0.238647, 1)
+"减值动画速度" = 0.3
+"减值停留时间" = 0.0
+"减值变色停留时间" = 0.2
+"是否加值变色" = false
+"加值动画颜色1" = Color(0.992188, 0.891203, 0.732513, 1)
+"加值动画速度" = 0.3
+"加值停留时间" = 0.3
+"加值变色停留时间" = 0.0
+"前景条颜色" = Color(0.74902, 0.611765, 0.396078, 1)
+
+[connection signal="value_changed" from="血量操作滑块" to="." method="_on_血量操作滑块_value_changed"]
+[connection signal="button_up" from="血量操作滑块/扣血按钮" to="." method="_on_扣血按钮_button_up"]
+[connection signal="button_up" from="血量操作滑块/加血按钮" to="." method="_on_加血按钮_button_up"]
+[connection signal="value_changed" from="蓝量操作滑块" to="." method="_on_蓝量操作滑块_value_changed"]
+[connection signal="button_up" from="蓝量操作滑块/扣按钮" to="." method="_on_扣按钮_button_up"]
+[connection signal="button_up" from="蓝量操作滑块/加按钮" to="." method="_on_加按钮_button_up"]
+[connection signal="value_changed" from="体力条操作滑块" to="." method="_on_体力条操作滑块_value_changed"]
+[connection signal="button_up" from="体力条操作滑块/扣按钮" to="." method="_on_体力扣按钮_button_up"]
+[connection signal="button_up" from="体力条操作滑块/加按钮" to="." method="_on_体力加按钮_button_up"]

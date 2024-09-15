@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1k7eir1mvmta"]
+
+[ext_resource type="Texture2D" uid="uid://cs1qdqssg8gwy" path="res://图片/白条.png" id="1_pov66"]
+[ext_resource type="Script" path="res://脚本/状态条类.gd" id="2_x81sj"]
+
+[node name="体力条" type="TextureRect" node_paths=PackedStringArray("背景框", "减值条", "加值条", "前景条")]
+clip_children = 1
+offset_left = 4.0
+offset_right = 393.0
+offset_bottom = 19.0
+texture = ExtResource("1_pov66")
+expand_mode = 1
+script = ExtResource("2_x81sj")
+"背景框" = NodePath("蓝条框")
+"减值条" = NodePath("蓝条框/扣力力条")
+"加值条" = NodePath("蓝条框/回力力条")
+"前景条" = NodePath("蓝条框/表显力条")
+"减值动画颜色1" = Color(0.317647, 0.160784, 0.14902, 1)
+"减值动画颜色2" = Color(0.67451, 0.34902, 0.321569, 1)
+"加值动画颜色1" = Color(0.278431, 0.65098, 0.52549, 1)
+"加值动画颜色2" = Color(0.619608, 0.164706, 0.133333, 1)
+"前景条颜色" = Color(0.847059, 0.843137, 0.835294, 1)
+
+[node name="蓝条框" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.141176, 0.141176, 0.141176, 0.92549)
+
+[node name="扣力力条" type="ColorRect" parent="蓝条框"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -65.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.988281, 0.362885, 0.362885, 1)
+
+[node name="回力力条" type="ColorRect" parent="蓝条框"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.278431, 0.65098, 0.52549, 1)
+
+[node name="表显力条" type="ColorRect" parent="蓝条框"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -87.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.847059, 0.843137, 0.835294, 1)
